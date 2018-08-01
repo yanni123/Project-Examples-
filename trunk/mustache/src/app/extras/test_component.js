@@ -13,6 +13,9 @@ function loadtemp() {
     nestedObjects();
     dereferencing();
     functionReference();
+    conditionSections();
+    partials();
+    partialsEnumerableSection();
 }
 
 function basicTemplate() {
@@ -103,42 +106,75 @@ function functionReference() {
     $('#functionReference').html(html);
 }
 
-//condition 
+function conditionSections() {
+    var data = {
+        employees: [
+            {
+                firstName: "Christophe",
+                lastName: "Coenraets",
+                fullTime: true,
+                phone: "617-123-4567"
+            },
+            {
+                firstName: "John",
+                lastName: "Smith",
+                fullTime: false,
+                phone: "617-987-6543"
+            },
+            {
+                firstName: "Lisa",
+                lastName: "Jones",
+                fullTime: true,
+                phone: "617-111-2323"
+            },
+        ]
+    };
+    var tpl = "Employees:<ul>{{#employees}}<li>{{firstName}} {{lastName}}" +
+        "{{#fullTime}} {{phone}}{{/fullTime}}</li>{{/employees}}</ul>";
+    var html = Mustache.to_html(tpl, data);
+    $('#conditionSections').html(html);
+}
 
-/*Templates can include conditional sections. 
-Conditional sections only render if the
- condition evaluates to true.*/
+function partials() {
+    var data = {
+        firstName: "Christophe",
+        lastName: "Coenraets",
+        address: "1 Main street",
+        city: "Boston",
+        state: "MA",
+        zip: "02106"
+    };
 
-var data = {
-    employees: [
-        {
-            firstName: "Christophe",
-            lastName: "Coenraets",
-            fullTime: true,
-            phone: "617-123-4567"
-        },
-        {
-            firstName: "John",
-            lastName: "Smith",
-            fullTime: false,
-            phone: "617-987-6543"
-        },
-        {
-            firstName: "Lisa",
-            lastName: "Jones",
-            fullTime: true,
-            phone: "617-111-2323"
-        },
-    ]
-};
+    var template = "<h1>{{firstName}} {{lastName}}</h1>{{>address}}";
+    var partials = { address: "<p>{{address}}</p>{{city}}, {{state}} {{zip}}" };
+    var html = Mustache.to_html(template, data, partials);
+    $('#partials').html(html);
+}
+
+function partialsEnumerableSection() {
+    var data = {
+        depts: [
+            {
+                name: "Engineering",
+                employees: [
+                    { firstName: "Christophe", lastName: "Coenraets" },
+                    { firstName: "John", lastName: "Smith" }]
+            },
+            {
+                name: "Sales",
+                employees: [
+                    { firstName: "Paula", lastName: "Taylor" },
+                    { firstName: "Lisa", lastName: "Jones" }]
+            }]
+    };
+
+    var tpl = "{{#depts}}<h1>{{name}}</h1>" +
+        "<ul>{{#employees}}{{>employee}}{{/employees}}</ul>{{/depts}}";
+    var partials = { employee: "<li>{{firstName}} {{lastName}}</li>" };
+    var html = Mustache.to_html(tpl, data, partials);
+    $('#partialsEnumerableSection').html(html);
+}
 
 
-var data = {
-    firstName: "Christophe",
-    lastName: "Coenraets",
-    address: "1 Main street",
-    city: "Boston",
-    state: "MA",
-    zip: "02106"
-};
+
 
