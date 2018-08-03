@@ -5,26 +5,155 @@
   <title>Mustache.js Inline Method</title>
   <script type="text/javascript" src="mustache.js"></script>
   <script src="test_component.js"></script>
+  <script src="jQueryLearning.component.js"></script>
   <script src="jquery-3.3.1.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 </head>
 
 <body onload="loadtemp()">
   <div class="text-center">
+    <h3>Basic template example</h3>
     <p class="text-info" id="person"></p>
     <p class="text-primary" id="BasicTemplate"></p>
+    <br>
+    <div class="row">
+      <div class="offset-md-4">
+        <button style="color:darkblue" type="button" class="btn btn-secondary-color" onclick="show_basic_template()">
+          <b>Show basic template</b>
+        </button>
+        <button type="button" class="btn btn-primary" onclick="hide_basic_template()">
+          <b>Hide basic template</b>
+        </button>
+      </div>
+    </div>
+    <br>
+    <br>
+    <h3>Enumerable Section example</h3>
     <div class="text-warning" id="EnumerableSection"></div>
+    <br>
+    <div class="row">
+      <div class="offset-md-4">
+        <button style="color:darkblue" type="button" class="btn btn-secondary-color" onclick="show_Enumerable_section()">
+          <b>Show Enumerable Section</b>
+        </button>
+        <button type="button" class="btn btn-primary" onclick="hide_Enumerable_section()">
+          <b>Hide Enumerable Section</b>
+        </button>
+      </div>
+    </div>
+    <br>
+    <br>
+    <h3>Enumerable Section with Objects</h3>
     <div class="text-success" id="EnumerableSectionWithObjects"></div>
+    <br>
+    <div class="row">
+      <div class="offset-md-3">
+        <button style="color:darkblue" type="button" class="btn btn-secondary-color" onclick="show_Enumerable_section_with_objects()">
+          <b>Show Enumerable Section with objects</b>
+        </button>
+        <button type="button" class="btn btn-primary" onclick="hide_Enumerable_section_with_objects()">
+          <b>Hide Enumerable Section with objects</b>
+        </button>
+      </div>
+    </div>
+    <br>
+    <br>
+    <h3>Nested Objects example</h3>
     <div class="text-danger" id="nestedObjects"></div>
     <br>
+    <div class="row">
+      <div class="offset-md-4">
+        <button style="color:darkblue" type="button" class="btn btn-secondary-color" onclick="show_nested_objects()">
+          <b>Show nested objects</b>
+        </button>
+        <button type="button" class="btn btn-primary" onclick="hide_nested_objects()">
+          <b>Hide nested objects</b>
+        </button>
+      </div>
+    </div>
+    <br>
+    <br>
+    <h3>Dereferencing example</h3>
     <div class="text-warning" id="dereferencing"></div>
     <br>
+    <div class="row">
+      <div class="offset-md-4">
+        <button style="color:darkblue" type="button" class="btn btn-secondary-color" onclick="show_dereferencing_example()">
+          <b>Show dereferencing example</b>
+        </button>
+        <button type="button" class="btn btn-primary" onclick="hide_dereferencing_example()">
+          <b>Hide dereferencing example</b>
+        </button>
+      </div>
+    </div>
+    <br>
+    <br>
+    <h3>Function reference</h3>
     <div class="text-primary" id="functionReference"></div>
     <br>
+    <div class="row">
+      <div class="offset-md-4">
+        <button style="color:darkblue" type="button" class="btn btn-secondary-color" onclick="show_function_reference_example()">
+          <b>Show function reference example</b>
+        </button>
+        <button type="button" class="btn btn-primary" onclick="hide_function_reference_example()">
+          <b>Hide function reference example</b>
+        </button>
+      </div>
+    </div>
+    <br>
+    <br>
+    <h3>Conditional sections</h3>
     <div class="text-success" id="conditionSections"></div>
+    <br>
+    <div class="row">
+      <div class="offset-md-4">
+        <button style="color:darkblue" type="button" class="btn btn-secondary-color" onclick="show_conditional_section_example()">
+          <b>Show conditional section example</b>
+        </button>
+        <button type="button" class="btn btn-primary" onclick="hide_conditional_section_example()">
+          <b>Hide conditional section example</b>
+        </button>
+      </div>
+    </div>
+    <br>
+    <br>
+    <h3>Partials example</h3>
     <div class="text-success" id="partials"></div>
+    <br>
+    <div class="row">
+      <div class="offset-md-4">
+        <button style="color:darkblue" type="button" class="btn btn-secondary-color" onclick="show_Partials_example()">
+          <b>Show partials example</b>
+        </button>
+        <button type="button" class="btn btn-primary" onclick="hide_Partials_example()">
+          <b>Hide partials example</b>
+        </button>
+      </div>
+    </div>
+    <br>
+    <br>
+    <h3>Partials in Enumerable Section example</h3>
     <div class="text-info" id="partialsEnumerableSection"></div>
+    <br>
+    <div class="row">
+      <div class="offset-md-4">
+        <button style="color:darkblue" type="button" class="btn btn-secondary-color" onclick="show_Partials_in_enumerable_section_example()">
+          <b>Show partials in enumerable section example</b>
+        </button>
+        <button type="button" class="btn btn-primary" onclick="hide_Partials_in_enumerable_section_example()">
+          <b>>Hide partials in enumerable section example</b>
+        </button>
+      </div>
+    </div>
+    <br>
+    <footer>
+      <button class="mb-5" type="button" class="btn btn-primary" onclick="hide_show_all_p_tags()">
+        <b>Click to hide/show all p tags</b>
+      </button>
+    </footer>
   </div>
+
 </body>
 
 </html>
