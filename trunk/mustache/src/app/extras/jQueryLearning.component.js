@@ -75,7 +75,7 @@ function hide_show_all_p_tags() {
     $("p").toggle();
 }
 
-function hidehide_show_all_p_tags() {
+function hidehidedddddddddd_show_all_p_tags() {
     $("p").toggle();
 }
 
